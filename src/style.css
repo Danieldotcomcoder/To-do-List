@@ -18,7 +18,18 @@ body {
   flex-direction: column;
   border: 1px solid lightgrey;
   box-shadow: 5px 5px 5px lightgray;
-  z-index: 1;
+}
+
+#list-text-input {
+  width: 100%;
+}
+
+.list-input img {
+  position: absolute;
+  margin-top: 1%;
+  right: 36%;
+  width: 15px;
+  height: 15px;
 }
 
 .top-list {
@@ -45,9 +56,13 @@ body {
 h1 {
   font-size: 3.5vh;
   font-weight: 100;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  margin-top: 1%;
 }
 
 .list-input {
+  display: flex;
+  flex-direction: row;
   height: 40px;
   border: transparent;
   border-bottom: 1px solid lightgray;
