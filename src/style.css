@@ -12,12 +12,12 @@ body {
 }
 
 .list-box {
-  margin-top: 13%;
+  margin-top: 10%;
   width: 30%;
   display: flex;
   flex-direction: column;
   border: 1px solid lightgrey;
-  box-shadow: 5px 5px 5px lightgray;
+  box-shadow: 10px 15px 10px lightgray;
 }
 
 #list-text-input {
@@ -30,6 +30,7 @@ body {
   right: 36%;
   width: 15px;
   height: 15px;
+  cursor: pointer;
 }
 
 .top-list {
