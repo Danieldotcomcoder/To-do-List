@@ -1,3 +1,107 @@
-.hello {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Tahoma, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-box {
+  margin-top: 13%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgrey;
+  box-shadow: 5px 5px 5px lightgray;
+  z-index: 1;
+}
+
+.top-list {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.top-list img {
+  width: 25px;
+  height: 25px;
+  margin-left: 55%;
+  margin-top: 1%;
+  cursor: pointer;
+}
+
+.list-title {
+  height: 40px;
+  display: flex;
+  text-align: left;
+}
+
+h1 {
+  font-size: 3.5vh;
+  font-weight: 100;
+}
+
+.list-input {
+  height: 40px;
+  border: transparent;
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+
+::placeholder {
+  font-style: italic;
+  font-size: 2.2vh;
+}
+
+.check-box {
+  cursor: pointer;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 45px;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+
+li input {
+  margin-left: 2%;
+}
+
+li h3 {
+  font-size: 2.5vh;
+  font-weight: 200;
+  text-align: left;
+  margin-left: 10%;
+}
+
+.list-elements img {
+  position: absolute;
+  left: 63%;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.bottom-list {
+  display: flex;
+  height: 45px;
+  background-color: honeydew;
+  justify-content: center;
+}
+
+.bottom-list h2 {
+  font-size: 3vh;
+  font-weight: 100;
+  margin-top: 2%;
+  color: rgba(0, 0, 0, 0.38);
+  cursor: pointer;
 }
