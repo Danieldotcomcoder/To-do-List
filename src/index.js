@@ -49,3 +49,4 @@ arraylists.forEach((item, i) => { // Display elements on screen by index number 
   itemlist.appendChild(threedots);
   list.appendChild(itemlist);
 });
+export default arraylists;
