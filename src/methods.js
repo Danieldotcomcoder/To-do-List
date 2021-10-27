@@ -1,29 +1,33 @@
 import arraylists from './index.js';
 
-const storeArray = () => {
-  localStorage.setItem('array', JSON.stringify(arraylists));
-};
+let temporaryarray = arraylists;
 
 const checkboxes = document.querySelectorAll('.check-box');
-checkboxes.forEach((box, i) => {
-  box.addEventListener('change', () => {
-    if (box.checked) {
-      arraylists[i].completed = true;
-    } else {
-      arraylists[i].completed = false;
-    }
-    storeArray();
-  });
-});
+
+const storeArray = () => {
+  localStorage.setItem('array', JSON.stringify(temporaryarray));
+};
 
 const getInfoFromStorage = () => JSON.parse(localStorage.getItem('array'));
+getInfoFromStorage();
+temporaryarray = getInfoFromStorage();
 
 const updateDisplay = () => {
   const temparray = getInfoFromStorage();
   temparray.forEach((item, i) => {
     if (item.completed === true) {
       checkboxes[i].checked = true;
-    } else checkboxes[i].checked = false;
+    }
   });
 };
+
 updateDisplay();
+
+checkboxes.forEach((box, i) => {
+  box.addEventListener('change', () => {
+    if (box.checked === true) {
+      temporaryarray[i].completed = true;
+    } else { temporaryarray[i].completed = false; }
+    storeArray();
+  });
+});
