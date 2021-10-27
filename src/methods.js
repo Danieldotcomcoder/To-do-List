@@ -8,7 +8,8 @@ const storeArray = () => {
   localStorage.setItem('array', JSON.stringify(temporaryarray));
 };
 
-const getInfoFromStorage = () => JSON.parse(localStorage.getItem('array'));
+const getInfoFromStorage = () => (localStorage.getItem('array') ? JSON.parse(localStorage.getItem('array')) : temporaryarray);
+
 getInfoFromStorage();
 temporaryarray = getInfoFromStorage();
 
