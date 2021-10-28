@@ -1,34 +1,34 @@
-import arraylists from './index.js';
+// // import arraylists from './index.js';
 
-let temporaryarray = arraylists;
+// let temporaryarray = arraylists;
 
-const checkboxes = document.querySelectorAll('.check-box');
+// const checkboxes = document.querySelectorAll('.check-box');
 
-const storeArray = () => {
-  localStorage.setItem('array', JSON.stringify(temporaryarray));
-};
+// const storeArray = () => {
+//   localStorage.setItem('array', JSON.stringify(temporaryarray));
+// };
 
-const getInfoFromStorage = () => (localStorage.getItem('array') ? JSON.parse(localStorage.getItem('array')) : temporaryarray);
+// const getInfoFromStorage = () => (localStorage.getItem('array') ? JSON.parse(localStorage.getItem('array')) : temporaryarray);
 
-getInfoFromStorage();
-temporaryarray = getInfoFromStorage();
+// getInfoFromStorage();
+// temporaryarray = getInfoFromStorage();
 
-const updateDisplay = () => {
-  const temparray = getInfoFromStorage();
-  temparray.forEach((item, i) => {
-    if (item.completed === true) {
-      checkboxes[i].checked = true;
-    }
-  });
-};
+// const updateDisplay = () => {
+//   const temparray = getInfoFromStorage();
+//   temparray.forEach((item, i) => {
+//     if (item.completed === true) {
+//       checkboxes[i].checked = true;
+//     }
+//   });
+// };
 
-updateDisplay();
+// updateDisplay();
 
-checkboxes.forEach((box, i) => {
-  box.addEventListener('change', () => {
-    if (box.checked === true) {
-      temporaryarray[i].completed = true;
-    } else { temporaryarray[i].completed = false; }
-    storeArray();
-  });
-});
+// checkboxes.forEach((box, i) => {
+//   box.addEventListener('change', () => {
+//     if (box.checked === true) {
+//       temporaryarray[i].completed = true;
+//     } else { temporaryarray[i].completed = false; }
+//     storeArray();
+//   });
+// });
