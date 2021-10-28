@@ -130,3 +130,16 @@ li h3 {
   border: 0px solid;
  outline: transparent;
 }
+
+.edit-btn.hide {
+  display: none;
+}
+
+.delete-btn {
+  display: none;
+}
+
+.delete-btn.show {
+  display: flex;
+  position: absolute;
+}

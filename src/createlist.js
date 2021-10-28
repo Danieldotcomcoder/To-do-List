@@ -1,4 +1,5 @@
 import menu from './img/menu.png';
+import deletebtn from './img/delete.png';
 
 class ToDo {
   constructor(description, completed, index) {
@@ -17,7 +18,8 @@ const createNewToDo = () => {
     const itemlist = document.createElement('li');
     itemlist.innerHTML = `<input type='checkbox' class='check-box'>
   <h3>${todo}</h3>
-  <img src='${menu}' class='edit-btn'>`;
+  <img src='${menu}' class='edit-btn'>
+  <img src='${deletebtn}' class='delete-btn'>`;
     list.appendChild(itemlist);
   }
   document.location.reload();
@@ -49,7 +51,8 @@ const updateDisplay = () => {
     const itemlist = document.createElement('li');
     itemlist.innerHTML = `<input type='checkbox' class='check-box'>
   <h3 class='todo-description'>${todoarray[i].description}</h3>
-  <img src='${menu}' class='edit-btn'>`;
+  <img src='${menu}' class='edit-btn'>
+  <img src='${deletebtn}' class='delete-btn'>`;
     list.appendChild(itemlist);
   });
   const checkboxes = document.querySelectorAll('.check-box');
@@ -72,18 +75,20 @@ checkboxes.forEach((box, i) => {
   });
 });
 
+const deletebtns = document.querySelectorAll('.delete-btn');
 const editbtns = document.querySelectorAll('.edit-btn');
 const tododescription = document.querySelectorAll('.todo-description');
+
 editbtns.forEach((item, i) => {
   item.addEventListener('click', () => {
-    tododescription[i].parentElement.style.backgroundColor = 'lightpink';
+    // tododescription[i].parentElement.style.backgroundColor = 'lightpink';
     const val = tododescription[i].innerHTML;
     const input = document.createElement('input');
-    input.style.backgroundColor = 'lightpink';
+    // input.style.backgroundColor = 'lightpink';
     input.value = val;
 
     input.className = 'input-edit';
-    input.onblur = function change() {
+    input.ondblclick = function change() {
       const val = this.value;
       this.parentNode.innerHTML = val;
       todoarray[i].description = val;
@@ -91,6 +96,24 @@ editbtns.forEach((item, i) => {
     };
     tododescription[i].innerHTML = '';
     tododescription[i].appendChild(input);
-    // input.focus();
+    input.focus();
+    editbtns[i].classList.toggle('hide');
+    deletebtns[i].classList.toggle('show');
   });
 });
+
+const removeTodo = () => {
+  deletebtns.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      item.parentElement.parentElement.removeChild(item.parentElement);
+      todoarray.splice(i, 1);
+      todoarray.forEach((el, j) => {
+        el.index = j + 1;
+      });
+      localStorage.setItem('array', JSON.stringify(todoarray));
+    });
+  });
+};
+removeTodo();
+
+const clearall = document.querySelector('.clear-all');
