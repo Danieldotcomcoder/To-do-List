@@ -1,13 +1,6 @@
 import menu from './img/menu.png';
 import deletebtn from './img/delete.png';
-
-class ToDo {
-  constructor(description, completed, index) {
-    this.description = description;
-    this.completed = completed;
-    this.index = index;
-  }
-}
+import ToDo from './class.js';
 
 const createNewToDo = () => {
   const todo = document.querySelector('#list-text-input').value;
@@ -57,18 +50,25 @@ const updateDisplay = () => {
   <img src='${deletebtn}' class='delete-btn'>`;
     list.appendChild(itemlist);
   });
+  const editbtns1 = document.querySelectorAll('.edit-btn');
+  const deletebtns1 = document.querySelectorAll('.delete-btn');
   const checkboxes = document.querySelectorAll('.check-box');
   const tododescription1 = document.querySelectorAll('.todo-description');
   todoarray.forEach((item, i) => {
     if (item.completed === true) {
       checkboxes[i].checked = true;
       tododescription1[i].innerHTML = tododescription1[i].textContent.strike();
+      editbtns1[i].classList.add('hide');
+      deletebtns1[i].classList.add('show');
     }
   });
 };
+
 updateDisplay();
 const checkboxes = document.querySelectorAll('.check-box');
 const tododescription = document.querySelectorAll('.todo-description');
+const editbtns = document.querySelectorAll('.edit-btn');
+const deletebtns = document.querySelectorAll('.delete-btn');
 
 checkboxes.forEach((box, i) => {
   box.addEventListener('change', () => {
@@ -76,16 +76,17 @@ checkboxes.forEach((box, i) => {
     if (box.checked === true) {
       todoarray[i].completed = true;
       tododescription[i].innerHTML = tododescription[i].textContent.strike();
+      editbtns[i].classList.add('hide');
+      deletebtns[i].classList.add('show');
     } else {
       todoarray[i].completed = false;
       tododescription[i].innerHTML = tododescription[i].textContent;
+      editbtns[i].classList.remove('hide');
+      deletebtns[i].classList.remove('show');
     }
     localStorage.setItem('array', JSON.stringify(todoarray));
   });
 });
-
-const deletebtns = document.querySelectorAll('.delete-btn');
-const editbtns = document.querySelectorAll('.edit-btn');
 
 editbtns.forEach((item, i) => {
   item.addEventListener('click', () => {
@@ -96,7 +97,7 @@ editbtns.forEach((item, i) => {
     input.value = val;
 
     input.className = 'input-edit';
-    input.ondblclick = function change() {
+    input.onclick = function change() {
       deletebtns[i].classList.remove('show');
       editbtns[i].classList.remove('hide');
       const val = this.value;
@@ -121,6 +122,7 @@ const removeTodo = () => {
         el.index = j + 1;
       });
       localStorage.setItem('array', JSON.stringify(todoarray));
+      document.location.reload();
     });
   });
 };

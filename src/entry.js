@@ -1,3 +1,3 @@
 import './index.js';
-import './methods.js';
-import './createlist.js';
+import './managelists.js';
+import './class.js';

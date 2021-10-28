@@ -127,6 +127,7 @@ li h3 {
   height: 40px;
   font-size: 2.5vh;
   outline: transparent;
+  border: none;
 }
 
 .edit-btn.hide {
