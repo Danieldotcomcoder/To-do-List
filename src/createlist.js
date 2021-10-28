@@ -27,7 +27,7 @@ const createNewToDo = () => {
 
 // const enterbtn = document.querySelector('.enter');
 let todoarray = [];
-
+document.querySelector('#list-text-input').focus();
 document.querySelector('#list-text-input').addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     const description = document.querySelector('#list-text-input').value;
@@ -43,7 +43,9 @@ document.querySelector('#list-text-input').addEventListener('keypress', (e) => {
     }
   }
 });
+
 const getInfoFromStorage = () => (localStorage.getItem('array') ? JSON.parse(localStorage.getItem('array')) : todoarray);
+
 const updateDisplay = () => {
   todoarray = getInfoFromStorage();
   todoarray.forEach((item, i) => {
@@ -56,28 +58,34 @@ const updateDisplay = () => {
     list.appendChild(itemlist);
   });
   const checkboxes = document.querySelectorAll('.check-box');
+  const tododescription1 = document.querySelectorAll('.todo-description');
   todoarray.forEach((item, i) => {
     if (item.completed === true) {
       checkboxes[i].checked = true;
+      tododescription1[i].innerHTML = tododescription1[i].textContent.strike();
     }
   });
 };
 updateDisplay();
 const checkboxes = document.querySelectorAll('.check-box');
+const tododescription = document.querySelectorAll('.todo-description');
 
 checkboxes.forEach((box, i) => {
   box.addEventListener('change', () => {
     todoarray = getInfoFromStorage();
     if (box.checked === true) {
       todoarray[i].completed = true;
-    } else { todoarray[i].completed = false; }
+      tododescription[i].innerHTML = tododescription[i].textContent.strike();
+    } else {
+      todoarray[i].completed = false;
+      tododescription[i].innerHTML = tododescription[i].textContent;
+    }
     localStorage.setItem('array', JSON.stringify(todoarray));
   });
 });
 
 const deletebtns = document.querySelectorAll('.delete-btn');
 const editbtns = document.querySelectorAll('.edit-btn');
-const tododescription = document.querySelectorAll('.todo-description');
 
 editbtns.forEach((item, i) => {
   item.addEventListener('click', () => {
@@ -89,6 +97,8 @@ editbtns.forEach((item, i) => {
 
     input.className = 'input-edit';
     input.ondblclick = function change() {
+      deletebtns[i].classList.remove('show');
+      editbtns[i].classList.remove('hide');
       const val = this.value;
       this.parentNode.innerHTML = val;
       todoarray[i].description = val;
@@ -117,3 +127,15 @@ const removeTodo = () => {
 removeTodo();
 
 const clearall = document.querySelector('.clear-all');
+clearall.addEventListener('click', () => {
+  function checkcompleted(element) {
+    return element.completed === false;
+  }
+  const newtodoarray = todoarray.filter(checkcompleted);
+
+  newtodoarray.forEach((el, j) => {
+    el.index = j + 1;
+  });
+  localStorage.setItem('array', JSON.stringify(newtodoarray));
+  document.location.reload();
+});
