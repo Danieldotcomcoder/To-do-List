@@ -1,2 +1,3 @@
 import './index.js';
-import './methods.js';
+import './managelists.js';
+import './class.js';
