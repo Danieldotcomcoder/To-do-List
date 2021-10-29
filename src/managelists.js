@@ -1,6 +1,7 @@
 import menu from './img/menu.png';
 import deletebtn from './img/delete.png';
 import ToDo from './class.js';
+import './style.css';
 
 const createNewToDo = () => {
   const todo = document.querySelector('#list-text-input').value;
@@ -9,7 +10,8 @@ const createNewToDo = () => {
   } else {
     const list = document.querySelector('.list-elements');
     const itemlist = document.createElement('li');
-    itemlist.innerHTML = `<input type='checkbox' class='check-box'>
+    itemlist.innerHTML = `
+    <input type='checkbox' class='check-box'>
   <h3>${todo}</h3>
   <img src='${menu}' class='edit-btn'>
   <img src='${deletebtn}' class='delete-btn'>`;
@@ -44,7 +46,8 @@ const updateDisplay = () => {
   todoarray.forEach((item, i) => {
     const list = document.querySelector('.list-elements');
     const itemlist = document.createElement('li');
-    itemlist.innerHTML = `<input type='checkbox' class='check-box'>
+    itemlist.innerHTML = `
+    <input type='checkbox' class='check-box'>
   <h3 class='todo-description'>${todoarray[i].description}</h3>
   <img src='${menu}' class='edit-btn'>
   <img src='${deletebtn}' class='delete-btn'>`;

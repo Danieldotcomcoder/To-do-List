@@ -79,6 +79,7 @@ h1 {
   cursor: pointer;
 }
 
+
 li {
   display: flex;
   flex-direction: row;
@@ -141,4 +142,18 @@ li h3 {
 .delete-btn.show {
   display: flex;
   position: absolute;
+}
+
+input[type="text"] {
+  font-style: italic;
+  font-size: 2.5vh;
+}
+
+input[type='checkbox']:checked {
+  width: 15px !important;
+  height: 15px !important;
+  margin: 8px;
+  outline: 1px solid transparent;
+  color: cyan;
+  background-color: cyan;
 }
