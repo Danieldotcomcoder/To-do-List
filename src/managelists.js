@@ -20,7 +20,6 @@ const createNewToDo = () => {
   document.location.reload();
 };
 
-// const enterbtn = document.querySelector('.enter');
 let todoarray = [];
 document.querySelector('#list-text-input').focus();
 document.querySelector('#list-text-input').addEventListener('keypress', (e) => {
@@ -93,10 +92,8 @@ checkboxes.forEach((box, i) => {
 
 editbtns.forEach((item, i) => {
   item.addEventListener('click', () => {
-    // tododescription[i].parentElement.style.backgroundColor = 'lightpink';
     const val = tododescription[i].innerHTML;
     const input = document.createElement('input');
-    // input.style.backgroundColor = 'lightpink';
     input.value = val;
 
     input.className = 'input-edit';
