@@ -1,9 +1,8 @@
-# To-Do-List
 # To-Do-List Project.
 
 > This project is built with HTML, CSS and JavaScript.
 
-> Implemented Functions by using JavaScript to add and remove lists.
+> A simple TO-DO-LIST where you can Add, Remove tasks , and also you can mark tasks as completed and clear all completed tasks.
 
 ## Built With
 ### Major languages
