@@ -17,10 +17,13 @@
 
 
 ## Getting Started
-To get a local copy up and running follow these simple example steps.
-git clone   https://github.com/Danieldotcomcoder/To-Do-List
+To get a local copy up and running follow these simple example steps:
+* git clone  https://github.com/Danieldotcomcoder/TO-DO-LIST.git
+* open terminal and type : 1-  npm run build.
+                           2-  npm start. 
 
-
+To see a live version:
+* https://danieldotcomcoder.github.io/TO-DO-LIST/
 ## Author
 👤 Daniel Shdeed
 
