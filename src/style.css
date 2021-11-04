@@ -57,7 +57,7 @@ body {
 h1 {
   font-size: 3.5vh;
   font-weight: 100;
-  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-family: "Arial Narrow", Arial, sans-serif;
   margin-top: 1%;
 }
 
@@ -148,7 +148,7 @@ input[type="text"] {
   font-size: 2.5vh;
 }
 
-input[type='checkbox']:checked {
+input[type="checkbox"]:checked {
   width: 15px !important;
   height: 15px !important;
   margin: 8px;
