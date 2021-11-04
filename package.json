@@ -4,15 +4,21 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --env=jsdom",
     "start": "webpack serve --open",
     "build": "webpack"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@testing-library/jest-dom": "^5.15.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.3",
     "css-loader": "^6.4.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -20,6 +26,8 @@
     "hint": "^6.1.6",
     "html-loader": "^3.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.3.1",
+    "jest-webpack": "^0.5.1",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -31,5 +39,15 @@
   },
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js",
+      "^config$": "<rootDir>/configs/app-config.js"
+    }
   }
 }
