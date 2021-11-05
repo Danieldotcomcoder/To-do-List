@@ -35,6 +35,13 @@ To see a live version:
 - Twitter: [https://twitter.com/DannyDotcoder)]
 - LinkedIn: [https://www.linkedin.com/in/daniel-shdeed-832b03115/]
 
+## Authors
+
+👤 **Munsa Mibenge**
+
+- GitHub: [@munsa1](https://github.com/munsa1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/munsa-mibenge-a35736205/)
+
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
 
