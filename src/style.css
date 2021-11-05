@@ -1,158 +1,141 @@
 * {
   margin: 0;
   padding: 0;
-  list-style: none;
-  font-family: Tahoma, sans-serif;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+  overflow-y: auto;
 }
 
-.list-box {
-  margin-top: 10%;
-  width: 30%;
+.form-section {
+  height: 80vh;
+  width: 500px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.form-control {
+  margin: 3rem auto 0;
+  width: 80%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid lightgrey;
-  box-shadow: 10px 15px 10px lightgray;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(150, 145, 145, 0.342);
 }
 
-#list-text-input {
+.header-wrap {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 
-.list-input img {
-  position: absolute;
-  margin-top: 1%;
-  right: 36%;
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
+.heading {
+  padding: 1rem 0.5rem;
 }
 
-.top-list {
+.form-input {
+  padding: 1rem;
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-evenly;
-}
-
-.top-list img {
-  width: 25px;
-  height: 25px;
-  margin-left: 55%;
-  margin-top: 1%;
-  cursor: pointer;
-}
-
-.list-title {
-  height: 40px;
-  display: flex;
-  text-align: left;
-}
-
-h1 {
-  font-size: 3.5vh;
-  font-weight: 100;
-  font-family: "Arial Narrow", Arial, sans-serif;
-  margin-top: 1%;
-}
-
-.list-input {
-  display: flex;
-  flex-direction: row;
-  height: 40px;
-  border: transparent;
-  border-bottom: 1px solid lightgray;
-  border-top: 1px solid lightgray;
-}
-
-::placeholder {
-  font-style: italic;
-  font-size: 2.2vh;
-}
-
-.check-box {
-  cursor: pointer;
-}
-
-li {
-  display: flex;
-  flex-direction: row;
+  column-gap: 1rem;
   align-items: center;
-  height: 45px;
-  background-color: white;
-  border-bottom: 1px solid lightgray;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
 }
 
-li input {
-  margin-left: 2%;
-}
-
-li h3 {
-  font-size: 2.5vh;
-  font-weight: 200;
-  text-align: left;
-  margin-left: 10%;
-}
-
-.list-elements img {
-  position: absolute;
-  left: 63%;
-  height: 20px;
-  width: 20px;
-  cursor: pointer;
-}
-
-.bottom-list {
-  display: flex;
-  height: 45px;
-  background-color: honeydew;
-  justify-content: center;
-}
-
-.bottom-list h2 {
-  font-size: 3vh;
-  font-weight: 100;
-  margin-top: 2%;
-  color: rgba(0, 0, 0, 0.38);
-  cursor: pointer;
-}
-
-.input-edit {
-  width: 300px;
-  height: 40px;
-  font-size: 2.5vh;
-  outline: transparent;
+.add {
   border: none;
+  background-color: inherit;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
 }
 
-.edit-btn.hide {
-  display: none;
+.syc {
+  padding: 1rem;
+  color: #888;
 }
 
-.delete-btn {
-  display: none;
+.syc:hover {
+  color: blue;
+  cursor: pointer;
 }
 
-.delete-btn.show {
+.add:hover {
+  color: blue;
+}
+
+.container {
   display: flex;
-  position: absolute;
+  flex-direction: column;
 }
 
-input[type="text"] {
+.div1 {
+  padding: 1rem;
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.dot {
+  cursor: move;
+  color: #888;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: blue;
+}
+
+.label {
+  width: 100%;
+}
+
+.italics {
+  border: none;
+  background-color: inherit;
+}
+
+.italics:focus {
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+
+.italics:placeholder-shown {
   font-style: italic;
-  font-size: 2.5vh;
+  font-size: 20px;
 }
 
-input[type="checkbox"]:checked {
-  width: 15px !important;
-  height: 15px !important;
-  margin: 8px;
-  outline: 1px solid transparent;
-  color: cyan;
-  background-color: cyan;
+.clear {
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f4f4f4;
+}
+
+.clear a {
+  color: #666;
+  text-decoration: none;
+}
+
+.clear a:hover {
+  text-decoration: underline;
 }
