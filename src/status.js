@@ -1,7 +1,7 @@
 /* eslint-disable import/no-cycle */
 import { saveStorage, getStorage } from './storage.js';
 
-const trashCompleted = () => {
+const removeCompleted = () => {
   const storedTasks = getStorage();
 
   const uncompletedTask = storedTasks.filter(
@@ -10,4 +10,4 @@ const trashCompleted = () => {
   saveStorage(uncompletedTask);
 };
 
-export default trashCompleted;
+export default removeCompleted;
