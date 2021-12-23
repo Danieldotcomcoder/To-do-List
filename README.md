@@ -4,6 +4,9 @@
 
 > A simple TO-DO-LIST where you can Add, Remove tasks , and also you can mark tasks as completed and clear all completed tasks.
 
+# Demo 
+
+![](chrome-capture.gif)
 ## Built With
 ### Major languages
 - HTML
